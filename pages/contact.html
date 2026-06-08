@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Book | Ezy Keys Driving School</title>
+  <meta name="description" content="Book a driving lesson with Ezy Keys on the Mornington Peninsula. Call, email, or fill in our quick booking form." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="top-bar-item"><span class="icon">📞</span><a href="tel:0400000000">0400 000 000</a></div>
+        <div class="top-bar-item"><span class="icon">✉️</span><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item"><span class="icon">📍</span><span>Mornington Peninsula, VIC</span></div>
+        <div class="top-bar-item"><span class="icon">🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">🔑</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Ezy Keys</span>
+          <span class="nav-logo-tagline">Driving School</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="areas.html">Areas</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:0400000000" class="btn btn-outline btn-sm">📞 Call Us</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book a Lesson</a>
+      </div>
+      <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> › <span>Contact</span></div>
+      <h1>Book a Lesson or Get in Touch</h1>
+      <p>We'd love to hear from you. Fill in the form, call, or email — we'll get back to you quickly.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info">
+          <div class="section-label">Contact Details</div>
+          <h2 class="section-title" style="font-size:28px;">Let's Get You on the Road</h2>
+          <p style="color:var(--text-light);font-size:15px;margin-bottom:8px;">
+            Whether you're ready to book your first lesson or just have a question, we're here to help. Reach out via any of the methods below.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:0400000000">0400 000 000</a>
+              <p>Mon – Sat, 8am – 6pm</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a>
+              <p>We usually reply within a few hours</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Service Area</h4>
+              <p>Mornington, Mt Eliza, Mt Martha, Dromana, Safety Beach, and surrounding suburbs on the Mornington Peninsula, VIC.</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <!-- Quick links -->
+          <div style="margin-top:8px;">
+            <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px;">QUICK ACTIONS</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="tel:0400000000" class="btn btn-primary btn-sm">📞 Call Now</a>
+              <a href="pricing.html" class="btn btn-outline btn-sm">💰 View Pricing</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form">
+          <h3>Book a Lesson</h3>
+          <p>Fill in your details and we'll confirm your booking shortly.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="lessonType">Lesson Type *</label>
+                <select id="lessonType" name="lessonType" required>
+                  <option value="" disabled selected>Select a lesson type</option>
+                  <option value="single">Single Lesson (1 hour — $70)</option>
+                  <option value="double">Double Lesson (2 hours — $130)</option>
+                  <option value="package">5-Lesson Package ($320)</option>
+                  <option value="test-prep">Drive Test Preparation</option>
+                  <option value="night">Night Driving</option>
+                  <option value="overseas">Overseas Licence Conversion</option>
+                  <option value="unsure">Not sure — please advise</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="area">Your Suburb *</label>
+                <input type="text" id="area" name="area" placeholder="e.g. Mornington" required />
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label for="experience">Your Experience Level *</label>
+              <select id="experience" name="experience" required>
+                <option value="" disabled selected>Select your current level</option>
+                <option value="none">Complete beginner — never driven before</option>
+                <option value="little">Some experience — a few lessons or supervised hours</option>
+                <option value="moderate">Moderate — 50+ logbook hours done</option>
+                <option value="test-ready">Nearly test ready — need final polish</option>
+                <option value="overseas">Overseas licence holder</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="message">Anything else we should know?</label>
+              <textarea id="message" name="message" placeholder="Preferred days/times, any concerns, questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
+              📅 Send Booking Request
+            </button>
+
+            <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;">
+              We'll confirm your booking via phone or email within a few hours.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo"><div class="footer-logo-icon">🔑</div><div class="footer-logo-name">Ezy Keys</div></div>
+          <p>A passionate and experienced driving school dedicated to guiding learners toward safe, confident driving independence across the Mornington Peninsula.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🔵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="areas.html">Areas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Learner Lessons</a></li>
+            <li><a href="services.html">Drive Test Prep</a></li>
+            <li><a href="services.html">Parking Skills</a></li>
+            <li><a href="services.html">Defensive Driving</a></li>
+            <li><a href="services.html">Night Driving</a></li>
+            <li><a href="services.html">Overseas Conversion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:0400000000">0400 000 000</a></p></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><p><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></p></div>
+            <div class="footer-contact-item"><span class="icon">📍</span><p>Mornington Peninsula, VIC</p></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><p>Mon – Sat, 8am – 6pm</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Ezy Keys Driving School. All rights reserved.</p>
+        <p>Built with care for safe roads 🚗</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

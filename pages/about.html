@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Ezy Keys Driving School</title>
+  <meta name="description" content="Learn about Ezy Keys Driving School — 15+ years of experience teaching safe, stress-free driving on the Mornington Peninsula." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media(max-width:860px){ .about-intro { grid-template-columns:1fr; gap:40px; } }
+
+    .about-visual-stack { display:flex; flex-direction:column; gap:16px; }
+
+    .about-big-stat {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+    .about-big-stat .num {
+      font-family: 'Nunito', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+    .about-big-stat .num span { color: var(--accent); }
+    .about-big-stat p { color:rgba(255,255,255,0.8); font-size:15px; margin-top:8px; }
+
+    .about-mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .about-mini-stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .about-mini-stat .val {
+      font-family: 'Nunito', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .about-mini-stat p { font-size:13px; color:var(--text-light); margin-top:4px; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    @media(max-width:720px){ .values-grid { grid-template-columns:1fr; } }
+
+    .value-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .value-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--primary); }
+    .value-card .emoji { font-size:40px; margin-bottom:16px; }
+    .value-card h3 { font-size:19px; margin-bottom:10px; }
+    .value-card p { font-size:14px; color:var(--text-light); line-height:1.7; }
+
+    .instructor-card {
+      background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 52px;
+    }
+    @media(max-width:680px){ .instructor-card { grid-template-columns:1fr; text-align:center; } }
+
+    .instructor-avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      display: flex; align-items:center; justify-content:center;
+      font-size: 56px;
+      flex-shrink: 0;
+    }
+    .instructor-name { font-size: 26px; margin-bottom:6px; }
+    .instructor-title { font-size:14px; color:var(--primary); font-weight:600; margin-bottom:16px; }
+    .instructor-bio { font-size:15px; color:var(--text-light); line-height:1.75; }
+
+    .instructor-badges {
+      display: flex; gap:10px; flex-wrap:wrap; margin-top:18px;
+    }
+    .badge {
+      display:inline-flex; align-items:center; gap:6px;
+      background: rgba(26,115,232,0.08);
+      color: var(--primary);
+      border:1px solid rgba(26,115,232,0.15);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size:12px;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="top-bar-item"><span class="icon">📞</span><a href="tel:0400000000">0400 000 000</a></div>
+        <div class="top-bar-item"><span class="icon">✉️</span><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item"><span class="icon">📍</span><span>Mornington Peninsula, VIC</span></div>
+        <div class="top-bar-item"><span class="icon">🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">🔑</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Ezy Keys</span>
+          <span class="nav-logo-tagline">Driving School</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="areas.html">Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:0400000000" class="btn btn-outline btn-sm">📞 Call Us</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book a Lesson</a>
+      </div>
+      <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> › <span>About</span></div>
+      <h1>About Ezy Keys</h1>
+      <p>Passionate about safe driving. Dedicated to making every learner feel capable and confident.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="about-intro">
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Driving Education Done Right</h2>
+          <p style="color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:20px;">
+            EzyKeys was founded on a simple belief: that every learner deserves a calm, structured, and genuinely supportive environment to learn to drive. We believe that good driving habits formed early make for safer roads for everyone.
+          </p>
+          <p style="color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:20px;">
+            With over 15 years of experience teaching in all road conditions — from quiet suburban streets to busy arterials — we've worked with hundreds of learners of all ages and backgrounds across the Mornington Peninsula.
+          </p>
+          <p style="color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:32px;">
+            We don't just teach people to pass a test. We develop intelligent, disciplined drivers who contribute to safer roads in Victoria for the long haul.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Book Your First Lesson →</a>
+        </div>
+
+        <div class="about-visual-stack">
+          <div class="about-big-stat">
+            <div class="num">15<span>+</span></div>
+            <p>Years teaching driving on the Mornington Peninsula</p>
+          </div>
+          <div class="about-mini-stats">
+            <div class="about-mini-stat">
+              <div class="val">500+</div>
+              <p>Students who've passed</p>
+            </div>
+            <div class="about-mini-stat">
+              <div class="val">⭐ 5.0</div>
+              <p>Google Reviews rating</p>
+            </div>
+            <div class="about-mini-stat">
+              <div class="val">5+</div>
+              <p>Areas served</p>
+            </div>
+            <div class="about-mini-stat">
+              <div class="val">100%</div>
+              <p>VicRoads accredited</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section class="section" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">Meet Your Instructor</div>
+        <h2 class="section-title">In Safe, Experienced Hands</h2>
+      </div>
+
+      <div class="instructor-card">
+        <div class="instructor-avatar">🧑‍🏫</div>
+        <div>
+          <h3 class="instructor-name">Your Ezy Keys Instructor</h3>
+          <div class="instructor-title">VicRoads Accredited Driving Instructor · 15+ Years Experience</div>
+          <p class="instructor-bio">
+            With over 15 years of professional driving instruction and real-world experience across all Victorian road conditions, your Ezy Keys instructor brings genuine expertise and warmth to every lesson. The teaching approach is patient, honest, and structured — designed to build real-world competence, not just pass a test. From nervous first-timers to learners polishing their test technique, every student is treated with equal care and respect.
+          </p>
+          <div class="instructor-badges">
+            <span class="badge">✓ VicRoads Accredited</span>
+            <span class="badge">✓ Working with Children Check</span>
+            <span class="badge">✓ Dual-Control Vehicle</span>
+            <span class="badge">✓ First Aid Trained</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">What We Stand For</div>
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-subtitle">Everything we do is guided by these principles.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="emoji">🛡️</div>
+          <h3>Safety First</h3>
+          <p>We believe prevention is the first priority. Every lesson is designed to develop safe habits that protect our students and others on the road.</p>
+        </div>
+        <div class="value-card">
+          <div class="emoji">💪</div>
+          <h3>Building Confidence</h3>
+          <p>Anxiety about driving is real, and we take it seriously. Our calm, non-judgmental approach transforms nervous learners into capable drivers.</p>
+        </div>
+        <div class="value-card">
+          <div class="emoji">🎯</div>
+          <h3>Honest Feedback</h3>
+          <p>We give you real, actionable feedback after every lesson — not just praise. You'll always know exactly where you're at and what to work on.</p>
+        </div>
+        <div class="value-card">
+          <div class="emoji">📐</div>
+          <h3>Structured Learning</h3>
+          <p>Lessons follow a clear, progressive plan — not random routes. Each session builds on the last, so you can see real, measurable improvement.</p>
+        </div>
+        <div class="value-card">
+          <div class="emoji">🤝</div>
+          <h3>Respect &amp; Patience</h3>
+          <p>Every learner progresses at their own pace. There's no rushing, no pressure, and absolutely no judgment in our vehicle.</p>
+        </div>
+        <div class="value-card">
+          <div class="emoji">🌏</div>
+          <h3>Community Focus</h3>
+          <p>We take our responsibility seriously. Every driver we train contributes to safer roads across the Mornington Peninsula and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Start Your Journey?</h2>
+        <p>Book a lesson today and experience the Ezy Keys difference for yourself.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-accent btn-lg">📅 Book Now</a>
+        <a href="pricing.html" class="btn btn-white btn-lg">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo"><div class="footer-logo-icon">🔑</div><div class="footer-logo-name">Ezy Keys</div></div>
+          <p>A passionate and experienced driving school dedicated to guiding learners toward safe, confident driving independence across the Mornington Peninsula.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🔵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li>
+            <li><a href="areas.html">Areas</a></li><li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Learner Lessons</a></li><li><a href="services.html">Drive Test Prep</a></li>
+            <li><a href="services.html">Parking Skills</a></li><li><a href="services.html">Defensive Driving</a></li>
+            <li><a href="services.html">Night Driving</a></li><li><a href="services.html">Overseas Conversion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:0400000000">0400 000 000</a></p></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><p><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></p></div>
+            <div class="footer-contact-item"><span class="icon">📍</span><p>Mornington Peninsula, VIC</p></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><p>Mon – Sat, 8am – 6pm</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Ezy Keys Driving School. All rights reserved.</p>
+        <p>Built with care for safe roads 🚗</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

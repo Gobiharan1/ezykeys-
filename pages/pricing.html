@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing & Packages | Ezy Keys Driving School</title>
+  <meta name="description" content="Transparent pricing for driving lessons across Mornington Peninsula. Single lessons, double lessons, and packages available." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .pricing-note {
+      background: rgba(26,115,232,0.07);
+      border: 1px solid rgba(26,115,232,0.18);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      font-size: 14px;
+      color: var(--text);
+      margin-top: 40px;
+      text-align: center;
+    }
+    .pricing-note strong { color: var(--primary); }
+    .package-highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: #fff;
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+    .package-highlight h3 { color: #fff; font-size: 26px; margin-bottom: 10px; }
+    .package-highlight p { color: rgba(255,255,255,0.8); font-size: 15px; }
+    @media(max-width:680px){ .package-highlight { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="top-bar-item"><span class="icon">📞</span><a href="tel:0400000000">0400 000 000</a></div>
+        <div class="top-bar-item"><span class="icon">✉️</span><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item"><span class="icon">📍</span><span>Mornington Peninsula, VIC</span></div>
+        <div class="top-bar-item"><span class="icon">🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">🔑</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Ezy Keys</span>
+          <span class="nav-logo-tagline">Driving School</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="areas.html">Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:0400000000" class="btn btn-outline btn-sm">📞 Call Us</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book a Lesson</a>
+      </div>
+      <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> › <span>Pricing</span>
+      </div>
+      <h1>Pricing &amp; Packages</h1>
+      <p>Simple, honest pricing with no hidden fees. Choose what works for you.</p>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">Our Rates</div>
+        <h2 class="section-title">Single Lessons &amp; Packages</h2>
+        <p class="section-subtitle">
+          With years of experience in driving and teaching, Ezy Keys is guaranteed to teach you
+          driving stress-free. Every lesson is counted toward your VicRoads logbook hours.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Single -->
+        <div class="pricing-card">
+          <div class="pricing-icon">🕐</div>
+          <div class="pricing-name">Single Lesson</div>
+          <div class="pricing-desc">One 1-hour lesson — book as you go</div>
+          <div class="pricing-price">
+            <div class="pricing-currency">$</div>
+            <div class="pricing-amount">70</div>
+            <div class="pricing-unit">/ hour</div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="check">✓</div> 1-hour driving session</div>
+            <div class="pricing-feature"><div class="check">✓</div> Home/school pickup included</div>
+            <div class="pricing-feature"><div class="check">✓</div> Logbook hours signed</div>
+            <div class="pricing-feature"><div class="check">✓</div> Post-lesson feedback</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Book This</a>
+        </div>
+
+        <!-- Double (featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-icon">⭐</div>
+          <div class="pricing-name">Double Lesson</div>
+          <div class="pricing-desc">Two hours — better value and more progress</div>
+          <div class="pricing-price">
+            <div class="pricing-currency">$</div>
+            <div class="pricing-amount">130</div>
+            <div class="pricing-unit">/ 2 hours</div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="check">✓</div> 2-hour driving session</div>
+            <div class="pricing-feature"><div class="check">✓</div> Home/school pickup included</div>
+            <div class="pricing-feature"><div class="check">✓</div> Logbook hours signed</div>
+            <div class="pricing-feature"><div class="check">✓</div> Detailed progress feedback</div>
+            <div class="pricing-feature"><div class="check">✓</div> Save $10 vs two singles</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book This</a>
+        </div>
+
+        <!-- 5-Pack -->
+        <div class="pricing-card">
+          <div class="pricing-icon">📦</div>
+          <div class="pricing-name">5-Lesson Pack</div>
+          <div class="pricing-desc">Five hours — ideal for steady progress</div>
+          <div class="pricing-price">
+            <div class="pricing-currency">$</div>
+            <div class="pricing-amount">320</div>
+            <div class="pricing-unit">/ 5 hours</div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="check">✓</div> 5 x 1-hour sessions</div>
+            <div class="pricing-feature"><div class="check">✓</div> Structured progression plan</div>
+            <div class="pricing-feature"><div class="check">✓</div> Logbook signed each lesson</div>
+            <div class="pricing-feature"><div class="check">✓</div> Full progress tracking</div>
+            <div class="pricing-feature"><div class="check">✓</div> Best rate per hour</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Book This</a>
+        </div>
+
+      </div>
+
+      <div class="pricing-note">
+        <strong>Did you know?</strong> Each professional lesson counts as <strong>3 logbook hours</strong> toward your 120-hour requirement — helping you reach your licence faster.
+      </div>
+
+      <!-- Test day package highlight -->
+      <div class="package-highlight">
+        <div>
+          <h3>🎯 Drive Test Day Package</h3>
+          <p>Nervous about your VicRoads test? Book a lesson on the morning of your test to warm up on the actual test routes. We'll drop you at the test centre ready to go. Contact us for pricing and availability.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-white btn-lg">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Pricing Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are there any hidden fees? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">No. The prices listed are all-inclusive. Pickup, logbook signing, and progress feedback are all part of every lesson.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do package lessons expire? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Package lessons do not expire and can be used at your own pace. We understand life gets busy — your hours are yours whenever you're ready to use them.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I pay? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Payment can be made by bank transfer or cash prior to or on the day of your lesson. Contact us if you have specific payment questions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Book Your First Lesson?</h2>
+        <p>Get in touch today and we'll set you up with the right lesson plan for your goals.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-accent btn-lg">📅 Book Now</a>
+        <a href="tel:0400000000" class="btn btn-white btn-lg">📞 Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo"><div class="footer-logo-icon">🔑</div><div class="footer-logo-name">Ezy Keys</div></div>
+          <p>A passionate and experienced driving school, dedicated to guiding learners toward safe, confident driving independence across the Mornington Peninsula.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a>
+            <a href="#" class="social-btn">📸</a>
+            <a href="#" class="social-btn">🔵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="areas.html">Areas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Learner Lessons</a></li>
+            <li><a href="services.html">Drive Test Prep</a></li>
+            <li><a href="services.html">Parking Skills</a></li>
+            <li><a href="services.html">Defensive Driving</a></li>
+            <li><a href="services.html">Night Driving</a></li>
+            <li><a href="services.html">Overseas Conversion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:0400000000">0400 000 000</a></p></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><p><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></p></div>
+            <div class="footer-contact-item"><span class="icon">📍</span><p>Mornington Peninsula, VIC</p></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><p>Monday – Saturday, 8am – 6pm</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Ezy Keys Driving School. All rights reserved.</p>
+        <p>Built with care for safe roads 🚗</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>
