@@ -227,9 +227,9 @@ ul { list-style: none; }
 }
 
 .nav-logo-icon {
-  width: 46px;
-  height: 46px;
-  background: var(--primary);
+  width: 140px;
+  height: 140px;
+
   border-radius: 12px;
   display: flex;
   align-items: center;

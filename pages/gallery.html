@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Ezy Keys Driving School</title>
+  <meta name="description" content="See Ezy Keys Driving School in action — lessons, students, and life on the Mornington Peninsula roads." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+
+    /* ── Filter tabs ── */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1.5px solid #e5e7eb;
+      background: #fff;
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #097969;
+      border-color: #097969;
+      color: #fff;
+    }
+
+    /* ── Masonry grid ── */
+    .gallery-grid {
+      columns: 3;
+      column-gap: 18px;
+    }
+
+    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 540px) { .gallery-grid { columns: 1; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: block;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9,121,105,0.82) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-text {
+      color: #fff;
+    }
+
+    .gallery-overlay-text span {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-overlay-text p {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* ── Placeholder tiles (no real images) ── */
+    .gallery-placeholder {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      background: #f0fdf4;
+      color: #097969;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .gallery-placeholder .ph-icon {
+      font-size: 36px;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 860px;
+      width: 100%;
+    }
+
+    .lightbox-inner img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .lightbox-placeholder {
+      width: 100%;
+      border-radius: 14px;
+      background: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      padding: 80px 40px;
+      color: #9ca3af;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .lightbox-placeholder .lp-icon { font-size: 52px; }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #e5e7eb;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fff;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-nav.prev { left: -56px; }
+    .lightbox-nav.next { right: -56px; }
+
+    @media (max-width: 680px) {
+      .lightbox-nav.prev { left: 4px; }
+      .lightbox-nav.next { right: 4px; }
+    }
+
+    /* ── Stats strip ── */
+    .gallery-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      background: linear-gradient(135deg, #097969, #076b5c);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 56px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .gallery-stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .gallery-stat-label {
+      font-size: 13px;
+      opacity: 0.82;
+      font-weight: 500;
+    }
+
+    /* ── CTA banner ── */
+    .gallery-cta {
+      margin-top: 56px;
+      background: #f0fdf4;
+      border: 1.5px solid #a7f3d0;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .gallery-cta h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .gallery-cta p {
+      font-size: 15px;
+      color: #6b7280;
+      margin-bottom: 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="top-bar-item"><span class="icon">📞</span><a href="tel:0400000000">0400 000 000</a></div>
+        <div class="top-bar-item"><span class="icon">✉️</span><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item"><span class="icon">📍</span><span>Mornington Peninsula, VIC</span></div>
+        <div class="top-bar-item"><span class="icon">🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+         <div class="nav-logo-icon"><img src="/logo.png" alt="Ezy Keys Logo" /></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="why-90-minutes.html">Why 90 Minutes</a></li>
+         <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="areas.html">Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:0400000000" class="btn btn-outline btn-sm">📞 Call Us</a>
+      </div>
+      <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> › <span>Gallery</span></div>
+      <h1>Our Gallery</h1>
+      <p>A glimpse into lessons, proud students, and the roads of the Mornington Peninsula.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Stats strip -->
+      <div class="gallery-stats">
+        <div>
+          <div class="gallery-stat-num">500+</div>
+          <div class="gallery-stat-label">Students Taught</div>
+        </div>
+        <div>
+          <div class="gallery-stat-num">98%</div>
+          <div class="gallery-stat-label">Pass Rate</div>
+        </div>
+        <div>
+          <div class="gallery-stat-num">8+</div>
+          <div class="gallery-stat-label">Years on the Road</div>
+        </div>
+        <div>
+          <div class="gallery-stat-num">5 ★</div>
+          <div class="gallery-stat-label">Average Rating</div>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="lessons">Lessons</button>
+        <button class="filter-btn" data-filter="students">Happy Students</button>
+        <button class="filter-btn" data-filter="roads">The Peninsula</button>
+        <button class="filter-btn" data-filter="car">The Car</button>
+      </div>
+
+      <!-- Gallery grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- Replace src="" with real image paths when you have photos -->
+        <!-- Each item: data-category matches filter-btn data-filter -->
+
+        <div class="gallery-item" data-category="lessons" data-caption="First lesson — building confidence from day one" data-label="Lessons" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:260px;">
+            <div class="ph-icon">🚗</div>
+            <div>Lesson Photo 1<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/lesson-01.jpg" alt="First driving lesson" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Lessons</span>
+              <p>First lesson — building confidence from day one</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="students" data-caption="Sarah passed her drive test first go! 🎉" data-label="Happy Students" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:320px;">
+            <div class="ph-icon">🎉</div>
+            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/student-01.jpg" alt="Student pass celebration" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Happy Students</span>
+              <p>Sarah passed her drive test first go! 🎉</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="roads" data-caption="The beautiful coastal roads of Mornington Peninsula" data-label="The Peninsula" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:200px;">
+            <div class="ph-icon">🌊</div>
+            <div>Peninsula Roads<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/roads-01.jpg" alt="Mornington Peninsula roads" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>The Peninsula</span>
+              <p>The beautiful coastal roads of Mornington Peninsula</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="car" data-caption="Our dual-control training vehicle — safe and comfortable" data-label="The Car" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:240px;">
+            <div class="ph-icon">🔑</div>
+            <div>Training Vehicle<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/car-01.jpg" alt="Ezy Keys training car" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>The Car</span>
+              <p>Our dual-control training vehicle — safe and comfortable</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="students" data-caption="Jake after nailing his parallel park 💪" data-label="Happy Students" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:280px;">
+            <div class="ph-icon">💪</div>
+            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/student-02.jpg" alt="Student celebrating" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Happy Students</span>
+              <p>Jake after nailing his parallel park 💪</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="lessons" data-caption="Mastering roundabouts in Mt Eliza" data-label="Lessons" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:220px;">
+            <div class="ph-icon">🔄</div>
+            <div>Lesson Photo 2<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/lesson-02.jpg" alt="Roundabout lesson" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Lessons</span>
+              <p>Mastering roundabouts in Mt Eliza</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="roads" data-caption="Morning run along the Mt Martha foreshore" data-label="The Peninsula" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:300px;">
+            <div class="ph-icon">🌅</div>
+            <div>Mt Martha Foreshore<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/roads-02.jpg" alt="Mt Martha foreshore" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>The Peninsula</span>
+              <p>Morning run along the Mt Martha foreshore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="lessons" data-caption="Night driving practice — building all-conditions confidence" data-label="Lessons" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:250px;">
+            <div class="ph-icon">🌙</div>
+            <div>Night Lesson<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/lesson-03.jpg" alt="Night driving lesson" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Lessons</span>
+              <p>Night driving practice — building all-conditions confidence</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="students" data-caption="Mia — passed on her second attempt. So proud! 🌟" data-label="Happy Students" onclick="openLightbox(this)">
+          <div class="gallery-placeholder" style="height:270px;">
+            <div class="ph-icon">🌟</div>
+            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
+          </div>
+          <!-- <img src="../images/gallery/student-03.jpg" alt="Student Mia" /> -->
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">
+              <span>Happy Students</span>
+              <p>Mia — passed on her second attempt. So proud! 🌟</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /gallery-grid -->
+
+      <!-- Bottom CTA -->
+      <div class="gallery-cta">
+        <h3>Ready to Create Your Own Success Story?</h3>
+        <p>Join hundreds of students who've passed their test with Ezy Keys. Book your first lesson today.</p>
+        <div class="gallery-cta-btns">
+          <a href="tel:0400000000" class="btn btn-primary">📞 Call to Book</a>
+          <a href="contact.html" class="btn btn-outline">✉️ Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-nav prev" onclick="shiftLightbox(-1)">&#8592;</button>
+      <button class="lightbox-nav next" onclick="shiftLightbox(1)">&#8594;</button>
+      <div id="lightboxContent"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo"><div class="footer-logo-icon">🔑</div><div class="footer-logo-name">Ezy Keys</div></div>
+          <p>A passionate and experienced driving school dedicated to guiding learners toward safe, confident driving independence across the Mornington Peninsula.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🔵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="areas.html">Areas</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Learner Lessons</a></li>
+            <li><a href="services.html">Drive Test Prep</a></li>
+            <li><a href="services.html">Parking Skills</a></li>
+            <li><a href="services.html">Defensive Driving</a></li>
+            <li><a href="services.html">Night Driving</a></li>
+            <li><a href="services.html">Overseas Conversion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:0400000000">0400 000 000</a></p></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><p><a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a></p></div>
+            <div class="footer-contact-item"><span class="icon">📍</span><p>Mornington Peninsula, VIC</p></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><p>Mon – Sat, 8am – 6pm</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Ezy Keys Driving School. All rights reserved.</p>
+        <p>Built with care for safe roads 🚗</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop">↑</button>
+  <script src="../js/main.js"></script>
+  <script>
+    // ── Filter logic ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.style.display = show ? 'block' : 'none';
+        });
+      });
+    });
+
+    // ── Lightbox logic ──
+    let currentIndex = 0;
+    let visibleItems = [];
+
+    function openLightbox(el) {
+      visibleItems = [...document.querySelectorAll('.gallery-item')].filter(i => i.style.display !== 'none');
+      currentIndex = visibleItems.indexOf(el);
+      renderLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderLightbox() {
+      const item = visibleItems[currentIndex];
+      const caption = item.dataset.caption || '';
+      const img = item.querySelector('img');
+      const content = document.getElementById('lightboxContent');
+
+      if (img) {
+        content.innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
+      } else {
+        const ph = item.querySelector('.gallery-placeholder');
+        const icon = ph ? ph.querySelector('.ph-icon').textContent : '🖼️';
+        const label = item.dataset.label || 'Photo';
+        content.innerHTML = `
+          <div class="lightbox-placeholder">
+            <div class="lp-icon">${icon}</div>
+            <div>${label}<br><span style="font-size:13px;font-weight:400;">Add your real image here</span></div>
+          </div>`;
+      }
+
+      document.getElementById('lightboxCaption').textContent = caption;
+    }
+
+    function shiftLightbox(dir) {
+      currentIndex = (currentIndex + dir + visibleItems.length) % visibleItems.length;
+      renderLightbox();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBg(e) {
+      if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') shiftLightbox(-1);
+      if (e.key === 'ArrowRight') shiftLightbox(1);
+    });
+  </script>
+</body>
+</html>
