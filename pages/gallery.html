@@ -353,148 +353,384 @@
         </div>
       </div>
 
-      <!-- Filter tabs -->
-      <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">All Photos</button>
-        <button class="filter-btn" data-filter="lessons">Lessons</button>
-        <button class="filter-btn" data-filter="students">Happy Students</button>
-        <button class="filter-btn" data-filter="roads">The Peninsula</button>
-        <button class="filter-btn" data-filter="car">The Car</button>
-      </div>
 
       <!-- Gallery grid -->
-      <div class="gallery-grid" id="galleryGrid">
+      <!-- Gallery grid -->
+<div class="gallery-grid" id="galleryGrid">
 
-        <!-- Replace src="" with real image paths when you have photos -->
-        <!-- Each item: data-category matches filter-btn data-filter -->
-
-        <div class="gallery-item" data-category="lessons" data-caption="First lesson — building confidence from day one" data-label="Lessons" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:260px;">
-            <div class="ph-icon">🚗</div>
-            <div>Lesson Photo 1<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/lesson-01.jpg" alt="First driving lesson" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Lessons</span>
-              <p>First lesson — building confidence from day one</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="students" data-caption="Sarah passed her drive test first go! 🎉" data-label="Happy Students" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:320px;">
-            <div class="ph-icon">🎉</div>
-            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/student-01.jpg" alt="Student pass celebration" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Happy Students</span>
-              <p>Sarah passed her drive test first go! 🎉</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="roads" data-caption="The beautiful coastal roads of Mornington Peninsula" data-label="The Peninsula" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:200px;">
-            <div class="ph-icon">🌊</div>
-            <div>Peninsula Roads<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/roads-01.jpg" alt="Mornington Peninsula roads" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>The Peninsula</span>
-              <p>The beautiful coastal roads of Mornington Peninsula</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="car" data-caption="Our dual-control training vehicle — safe and comfortable" data-label="The Car" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:240px;">
-            <div class="ph-icon">🔑</div>
-            <div>Training Vehicle<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/car-01.jpg" alt="Ezy Keys training car" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>The Car</span>
-              <p>Our dual-control training vehicle — safe and comfortable</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="students" data-caption="Jake after nailing his parallel park 💪" data-label="Happy Students" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:280px;">
-            <div class="ph-icon">💪</div>
-            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/student-02.jpg" alt="Student celebrating" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Happy Students</span>
-              <p>Jake after nailing his parallel park 💪</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="lessons" data-caption="Mastering roundabouts in Mt Eliza" data-label="Lessons" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:220px;">
-            <div class="ph-icon">🔄</div>
-            <div>Lesson Photo 2<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/lesson-02.jpg" alt="Roundabout lesson" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Lessons</span>
-              <p>Mastering roundabouts in Mt Eliza</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="roads" data-caption="Morning run along the Mt Martha foreshore" data-label="The Peninsula" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:300px;">
-            <div class="ph-icon">🌅</div>
-            <div>Mt Martha Foreshore<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/roads-02.jpg" alt="Mt Martha foreshore" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>The Peninsula</span>
-              <p>Morning run along the Mt Martha foreshore</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="lessons" data-caption="Night driving practice — building all-conditions confidence" data-label="Lessons" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:250px;">
-            <div class="ph-icon">🌙</div>
-            <div>Night Lesson<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/lesson-03.jpg" alt="Night driving lesson" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Lessons</span>
-              <p>Night driving practice — building all-conditions confidence</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="students" data-caption="Mia — passed on her second attempt. So proud! 🌟" data-label="Happy Students" onclick="openLightbox(this)">
-          <div class="gallery-placeholder" style="height:270px;">
-            <div class="ph-icon">🌟</div>
-            <div>Student Win Photo<br><span style="font-weight:400;color:#6b7280;font-size:12px;">Replace with real image</span></div>
-          </div>
-          <!-- <img src="../images/gallery/student-03.jpg" alt="Student Mia" /> -->
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <span>Happy Students</span>
-              <p>Mia — passed on her second attempt. So proud! 🌟</p>
-            </div>
-          </div>
-        </div>
-
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/20210201_101601.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
       </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/20210205_111118.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/20210208_142618.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/edited.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0296.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0297.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0315.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0316.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0374.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0375.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0442.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0600.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0617.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0622.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0640.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0652.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0663.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0665.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0677.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0686.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0732.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0754.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/IMG_0763.jpeg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="lessons" data-label="Lessons" onclick="openLightbox(this)">
+    <img src="/images/students/Multicolored-Aesthetic-1.png" alt="Lessons collage" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Lessons</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="lessons" data-label="Lessons" onclick="openLightbox(this)">
+    <img src="/images/students/Multicolored-Aesthetic-Collage.png" alt="Lessons collage" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Lessons</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210323_031301228.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210326_006574000.MP_.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210412_232643529.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210610_034843900.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210615_060004927.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210616_002624400.MP_.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210617_020904145.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210702_044801824.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210707_020250600.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210709_000857600.MP_.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="car" data-label="The Car" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210802_001455083.jpg" alt="Training vehicle" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>The Car</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20210815_231648900.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20211025_013058697.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20211027_034522761.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20211201_013218810.MP_.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="students" data-label="Happy Students" onclick="openLightbox(this)">
+    <img src="/images/students/PXL_20240530_005404722.jpg" alt="Happy student" />
+    <div class="gallery-overlay">
+      <div class="gallery-overlay-text">
+        <span>Happy Students</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /gallery-grid -->
+
+
       <!-- /gallery-grid -->
 
       <!-- Bottom CTA -->
