@@ -6,6 +6,194 @@
   <title>Contact & Book | Ezy Keys Driving School</title>
   <meta name="description" content="Book a driving lesson with Ezy Keys on the Mornington Peninsula. Call, email, or fill in our quick booking form." />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Contact reach cards ── */
+    .reach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .reach-card {
+      background: #fff;
+      border: 1.5px solid #e8f5f2;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(9,121,105,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .reach-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(9,121,105,0.13);
+      border-color: #097969;
+    }
+
+    .reach-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 16px;
+    }
+
+    .reach-card-icon.green  { background: #ecfdf5; }
+    .reach-card-icon.blue   { background: #eff6ff; }
+    .reach-card-icon.wa     { background: #f0fdf4; }
+
+    .reach-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text, #1f2937);
+      margin-bottom: 6px;
+    }
+
+    .reach-card p {
+      font-size: 14px;
+      color: var(--text-light, #6b7280);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .reach-card .reach-cta {
+      display: inline-block;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      background: #097969;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .reach-card:hover .reach-cta {
+      background: #076b5c;
+    }
+
+    .reach-card.wa-card .reach-cta {
+      background: #25d366;
+    }
+
+    .reach-card.wa-card:hover .reach-cta {
+      background: #1ebe5d;
+    }
+
+    /* ── Hours + Area block ── */
+    .contact-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 640px) {
+      .contact-meta-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-meta-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .contact-meta-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #097969;
+      margin-bottom: 12px;
+    }
+
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--text-light, #6b7280);
+      padding: 5px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list li span:last-child { font-weight: 600; color: #1f2937; }
+    .hours-list li.closed span:last-child { color: #d1d5db; }
+
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .area-tag {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── Response promise banner ── */
+    .response-banner {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #097969, #076b5c);
+      border-radius: 16px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: #fff;
+    }
+
+    .response-banner-text h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .response-banner-text p {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .response-banner .btn-white-outline {
+      display: inline-block;
+      padding: 11px 28px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .response-banner .btn-white-outline:hover {
+      background: #fff;
+      color: #097969;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +210,7 @@
     </div>
   </div>
 
-   <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="../index.html" class="nav-logo">
@@ -37,9 +225,9 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="why-90-minutes.html" class="active">Why 90 Minutes</a></li>
+        <li><a href="why-90-minutes.html">Why 90 Minutes</a></li>
         <li><a href="areas.html">Areas</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
       <div class="nav-cta">
         <a href="tel:0400000000" class="btn btn-outline btn-sm">📞 Call Us</a>
@@ -53,143 +241,87 @@
     <div class="container">
       <div class="breadcrumb"><a href="../index.html">Home</a> › <span>Contact</span></div>
       <h1>Book a Lesson or Get in Touch</h1>
-      <p>We'd love to hear from you. Fill in the form, call, or email — we'll get back to you quickly.</p>
+      <p>We'd love to hear from you. Call, WhatsApp, or send an email — we'll get back to you quickly.</p>
     </div>
   </div>
 
   <!-- CONTACT SECTION -->
   <section class="section">
     <div class="container">
-      <div class="contact-grid">
 
-        <!-- Info -->
-        <div class="contact-info">
-          <div class="section-label">Contact Details</div>
-          <h2 class="section-title" style="font-size:28px;">Let's Get You on the Road</h2>
-          <p style="color:var(--text-light);font-size:15px;margin-bottom:8px;">
-            Whether you're ready to book your first lesson or just have a question, we're here to help. Reach out via any of the methods below.
-          </p>
+      <div class="section-label">Reach Us</div>
+      <h2 class="section-title">Choose How You'd Like to Connect</h2>
+      <p class="section-subtitle" style="margin-bottom: 0;">Pick the easiest option for you — we're quick to respond on all channels.</p>
 
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <h4>Phone</h4>
-              <a href="tel:0400000000">0400 000 000</a>
-              <p>Mon – Sat, 8am – 6pm</p>
-            </div>
-          </div>
+      <!-- 3 reach cards -->
+      <div class="reach-grid">
 
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:info@ezykeys.com.au">info@ezykeys.com.au</a>
-              <p>We usually reply within a few hours</p>
-            </div>
-          </div>
+        <a href="tel:0400000000" class="reach-card">
+          <div class="reach-card-icon green">📞</div>
+          <h3>Call Us</h3>
+          <p>Speak directly with your instructor. Best for quick questions or booking on the spot.</p>
+          <span class="reach-cta">Call 0400 000 000</span>
+        </a>
 
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <h4>Service Area</h4>
-              <p>Mornington, Mt Eliza, Mt Martha, Dromana, Safety Beach, and surrounding suburbs on the Mornington Peninsula, VIC.</p>
-            </div>
-          </div>
+        <a href="mailto:info@ezykeys.com.au" class="reach-card">
+          <div class="reach-card-icon blue">✉️</div>
+          <h3>Send an Email</h3>
+          <p>Prefer to write it out? Drop us an email and we'll reply within a few hours.</p>
+          <span class="reach-cta">Email Us</span>
+        </a>
 
-          <div class="contact-item">
-            <div class="contact-icon">🕐</div>
-            <div>
-              <h4>Hours</h4>
-              <p>Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
-            </div>
-          </div>
+        <a href="https://wa.me/61400000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20driving%20lesson%20with%20Ezy%20Keys." class="reach-card wa-card" target="_blank" rel="noopener">
+          <div class="reach-card-icon wa">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Chat at your own pace. Send us a message and we'll confirm your booking via WhatsApp.</p>
+          <span class="reach-cta">Open WhatsApp</span>
+        </a>
 
-          <!-- Quick links -->
-          <div style="margin-top:8px;">
-            <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px;">QUICK ACTIONS</p>
-            <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="tel:0400000000" class="btn btn-primary btn-sm">📞 Call Now</a>
-              <a href="pricing.html" class="btn btn-outline btn-sm">💰 View Pricing</a>
-            </div>
-          </div>
+      </div>
+
+      <!-- Hours + Areas -->
+      <div class="contact-meta-grid">
+
+        <div class="contact-meta-card">
+          <h4>🕐 Opening Hours</h4>
+          <ul class="hours-list">
+            <li><span>Monday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li><span>Tuesday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li><span>Wednesday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li><span>Thursday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li><span>Friday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li><span>Saturday</span><span>8:00 AM – 6:00 PM</span></li>
+            <li class="closed"><span>Sunday</span><span>Closed</span></li>
+          </ul>
         </div>
 
-        <!-- Form -->
-        <div class="contact-form">
-          <h3>Book a Lesson</h3>
-          <p>Fill in your details and we'll confirm your booking shortly.</p>
-
-          <form id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="lessonType">Lesson Type *</label>
-                <select id="lessonType" name="lessonType" required>
-                  <option value="" disabled selected>Select a lesson type</option>
-                  <option value="single">Single Lesson (1 hour — $70)</option>
-                  <option value="double">Double Lesson (2 hours — $130)</option>
-                  <option value="package">5-Lesson Package ($320)</option>
-                  <option value="test-prep">Drive Test Preparation</option>
-                  <option value="night">Night Driving</option>
-                  <option value="overseas">Overseas Licence Conversion</option>
-                  <option value="unsure">Not sure — please advise</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="area">Your Suburb *</label>
-                <input type="text" id="area" name="area" placeholder="e.g. Mornington" required />
-              </div>
-            </div>
-
-            <div class="form-group full">
-              <label for="experience">Your Experience Level *</label>
-              <select id="experience" name="experience" required>
-                <option value="" disabled selected>Select your current level</option>
-                <option value="none">Complete beginner — never driven before</option>
-                <option value="little">Some experience — a few lessons or supervised hours</option>
-                <option value="moderate">Moderate — 50+ logbook hours done</option>
-                <option value="test-ready">Nearly test ready — need final polish</option>
-                <option value="overseas">Overseas licence holder</option>
-              </select>
-            </div>
-
-            <div class="form-group full">
-              <label for="message">Anything else we should know?</label>
-              <textarea id="message" name="message" placeholder="Preferred days/times, any concerns, questions..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
-              📅 Send Booking Request
-            </button>
-
-            <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;">
-              We'll confirm your booking via phone or email within a few hours.
-            </p>
-          </form>
+        <div class="contact-meta-card">
+          <h4>📍 Areas We Cover</h4>
+          <p style="font-size:13px;color:var(--text-light,#6b7280);margin-bottom:14px;">We pick you up and drop you off within these suburbs on the Mornington Peninsula:</p>
+          <div class="area-tags">
+            <span class="area-tag">Mornington</span>
+            <span class="area-tag">Mt Eliza</span>
+            <span class="area-tag">Mt Martha</span>
+            <span class="area-tag">Dromana</span>
+            <span class="area-tag">Safety Beach</span>
+            <span class="area-tag">Frankston</span>
+            <span class="area-tag">Rosebud</span>
+            <span class="area-tag">Rye</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-light,#6b7280);margin-top:14px;">Not sure if we cover your area? Just give us a call.</p>
         </div>
 
       </div>
+
+      <!-- Response promise -->
+      <div class="response-banner">
+        <div class="response-banner-text">
+          <h3>🚗 Ready to Start Driving?</h3>
+          <p>Most students get their first lesson booked within 24 hours of reaching out. Don't wait — spots fill fast.</p>
+        </div>
+        <a href="tel:0400000000" class="btn-white-outline">📞 Call Now to Book</a>
+      </div>
+
     </div>
   </section>
 
