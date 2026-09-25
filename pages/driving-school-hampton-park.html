@@ -1643,32 +1643,8 @@
                 <img src="../logo.png" alt="Ezy Keys Driving School Logo">
             </a>
         </div>
-        <nav class="desktop-nav">
-            <a href="../index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="gallery.html">Successful Students</a>
-            <a href="why-90-minutes.html">Why 90 Minutes</a>
-        </nav>
-        <a href="tel:0417545545" class="phone-btn pc">📞 0417 545 545</a>
-        <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="gallery.html">Successful Students</a>
-        <a href="why-90-minutes.html">Why 90 Minutes</a>
         <a href="tel:0417545545" class="phone-btn">📞 0417 545 545</a>
-    </nav>
-    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    </header>
 
     <main class="ezy-lp-page">
         <section class="ezy-lp-hero">
@@ -1930,70 +1906,12 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about-col">
-                <div class="footer-logo">
-                    <img src="../logo.png" alt="Ezy Keys Driving School Logo">
-                </div>
-                <p class="footer-desc">EzyKeys is a passionate and experienced driving school, with a dedicated instructor ready to make our roads safe by guiding and coaching young learners in the right path for their driving independence. We believe that prevention is the first priority when it comes to major road related safety issues in Victoria. As an experienced instructor we carry a responsibility to develop intelligent and disciplined drivers who will help keep our roads safe.</p>
-            </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="gallery.html">Successful Students</a></li>
-                    <li><a href="why-90-minutes.html">Why 90 Minutes</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Get In Touch</h3>
-                <ul class="footer-contact-list">
-                    <li><a href="tel:0417545545"><i class="fas fa-phone-volume icon-pink"></i> 0417 545 545</a></li>
-                    <li><a href="https://wa.me/61417545545" target="_blank" rel="noopener"><i class="fab fa-whatsapp icon-green"></i> WhatsApp</a></li>
-                    <li><span class="location-item"><i class="fas fa-map-marker-alt icon-pink"></i> Hampton Park, Lynbrook, Lyndhurst</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom-wrapper">
-            <div class="footer-bottom-line"></div>
-            <div class="footer-bottom-content">
-                <p class="copyright">© 2026 All rights reserved.</p>
-                <p class="credits">Powered by <a href="https://nuwalidigital.com/" rel="nofollow" class="syncfuse-text">Nuwali Digital Solutions</a></p>
-            </div>
-        </div>
-    </footer>
-
     <div class="ezy-lp-sticky">
         <div>📞 <a href="tel:0417545545">0417 545 545</a></div>
         <div><a href="#book-form" class="ezy-lp-sticky-btn">BOOK ONLINE</a></div>
     </div>
 
     <script>
-        function toggleMobileMenu() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const mobileNav = document.getElementById('mobileNav');
-            const overlay = document.getElementById('mobileOverlay');
-            toggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-            toggle.setAttribute('aria-expanded', toggle.classList.contains('active') ? 'true' : 'false');
-        }
-
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (document.getElementById('mobileNav').classList.contains('active')) toggleMobileMenu();
-            });
-        });
-
-        document.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && document.getElementById('mobileNav').classList.contains('active')) toggleMobileMenu();
-        });
-
         function toggleFaq(button) {
             const answer = button.nextElementSibling;
             const isOpen = answer.classList.contains('open');
