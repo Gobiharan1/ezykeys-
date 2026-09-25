@@ -123,7 +123,7 @@
 
         .ezy-lp-hero-list {
             display: grid;
-            gap: 13px;
+            gap: 10px;
             margin: 0;
             padding: 0;
             list-style: none;
@@ -131,9 +131,49 @@
 
         .ezy-lp-hero-list li {
             display: flex;
-            gap: 11px;
-            color: #f2fbf8;
-            line-height: 1.55;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 13px 15px;
+            color: #dcece9;
+            background: linear-gradient(105deg, rgba(255,255,255,.1), rgba(255,255,255,.045));
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 14px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+            line-height: 1.48;
+            transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+        }
+
+        .ezy-lp-hero-list li:hover {
+            transform: translateX(4px);
+            background-color: rgba(255,255,255,.07);
+            border-color: rgba(131,225,192,.35);
+        }
+
+        .ezy-lp-list-icon {
+            display: grid;
+            flex: 0 0 32px;
+            width: 32px;
+            height: 32px;
+            place-items: center;
+            margin-top: 1px;
+            background: rgba(131,225,192,.13);
+            border: 1px solid rgba(131,225,192,.25);
+            border-radius: 9px;
+            font-size: .95rem;
+            line-height: 1;
+        }
+
+        .ezy-lp-list-copy {
+            min-width: 0;
+            font-size: .94rem;
+        }
+
+        .ezy-lp-list-copy strong {
+            display: block;
+            margin-bottom: 1px;
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .ezy-lp-car-stage {
@@ -1661,9 +1701,9 @@
                     <h1>Master Driving in Hampton Park &amp; Lynbrook with <span>Ezy Keys!</span></h1>
                     <p>Build real road confidence and pass your VicRoads drive test on your first attempt with structured, calm, and professional driving instruction.</p>
                     <ul class="ezy-lp-hero-list">
-                        <li>✅ <strong>Free door-to-door pick-up &amp; drop-off</strong> in Hampton Park, Lynbrook &amp; Lyndhurst</li>
-                        <li>✅ <strong>Fun, calm &amp; zero-stress</strong> coaching tailored to your learning speed</li>
-                        <li>✅ <strong>VicRoads test focused</strong> — learn exact test routes and marking criteria</li>
+                        <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>Free door-to-door pick-up &amp; drop-off</strong> in Hampton Park, Lynbrook &amp; Lyndhurst</span></li>
+                        <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>Fun, calm &amp; zero-stress</strong> coaching tailored to your learning speed</span></li>
+                        <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>VicRoads test focused</strong> — learn exact test routes and marking criteria</span></li>
                     </ul>
                     <div class="ezy-lp-hero-actions">
                         <a href="#book-form" class="ezy-lp-primary-btn">BOOK YOUR FIRST LESSON</a>
