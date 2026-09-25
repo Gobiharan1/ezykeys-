@@ -446,7 +446,7 @@
 
         .ezy-lp-form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 16px;
         }
 
@@ -467,7 +467,8 @@
         }
 
         .ezy-lp-field input,
-        .ezy-lp-field select {
+        .ezy-lp-field select,
+        .ezy-lp-field textarea {
             width: 100%;
             min-height: 48px;
             padding: 11px 13px;
@@ -479,8 +480,14 @@
             font: inherit;
         }
 
+        .ezy-lp-field textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
         .ezy-lp-field input:focus,
-        .ezy-lp-field select:focus {
+        .ezy-lp-field select:focus,
+        .ezy-lp-field textarea:focus {
             border-color: var(--lp-green);
             box-shadow: 0 0 0 4px rgba(0,127,95,.1);
         }
@@ -1776,7 +1783,7 @@
                             </div>
                             <div class="ezy-lp-field">
                                 <label for="inquiry">Inquiry Option *</label>
-                                <input type="text" id="inquiry" name="inquiry" required maxlength="120" placeholder="e.g. 90-Min Lesson, 60-Min Lesson, Special Offer">
+                                <textarea id="inquiry" name="inquiry" required maxlength="500" rows="4" placeholder="e.g. 90-Min Lesson, 60-Min Lesson, Special Offer"></textarea>
                             </div>
                             <div class="ezy-lp-honeypot" aria-hidden="true">
                                 <label for="website">Leave this field empty</label>

@@ -36,7 +36,7 @@ function clean_field(string $value, int $maximumLength): string
 $name = clean_field((string) ($_POST['name'] ?? ''), 100);
 $phone = clean_field((string) ($_POST['phone'] ?? ''), 30);
 $suburb = clean_field((string) ($_POST['suburb'] ?? ''), 80);
-$inquiry = clean_field((string) ($_POST['inquiry'] ?? ''), 120);
+$inquiry = clean_field((string) ($_POST['inquiry'] ?? ''), 500);
 
 if ($name === '' || $phone === '' || $suburb === '' || $inquiry === '') {
     finish(422, false, 'Please complete all required fields.');
@@ -52,7 +52,7 @@ if (!in_array($suburb, $allowedSuburbs, true)) {
 }
 
 $recipient = 'sanjeev@ezykeys.com.au';
-$subject = 'Ezy Keys Website Enquiry - ' . $inquiry;
+$subject = 'Ezy Keys Website Enquiry - ' . $suburb;
 $receivedAt = date('j M Y, g:i a T');
 $visitorIp = clean_field((string) ($_SERVER['REMOTE_ADDR'] ?? 'Unavailable'), 45);
 
