@@ -117,8 +117,8 @@
         .ezy-lp-hero h1 {
             max-width: 720px;
             margin: 0 0 20px;
-            font-size: clamp(2.65rem, 5.5vw, 5rem);
-            line-height: 1.03;
+            font-size: clamp(2.35rem, 4.4vw, 4.1rem);
+            line-height: 1.06;
             letter-spacing: -0.055em;
         }
 
@@ -511,6 +511,10 @@
             grid-column: 1 / -1;
         }
 
+        .ezy-lp-other-location[hidden] {
+            display: none;
+        }
+
         .ezy-lp-field label {
             display: block;
             margin-bottom: 7px;
@@ -901,6 +905,17 @@
         .ezy-lp-sticky a {
             color: white;
             font-weight: 700;
+        }
+
+        .ezy-lp-sticky > div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 14px;
+            background: linear-gradient(135deg, #00a77d, var(--lp-green));
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 999px;
+            box-shadow: 0 8px 22px rgba(0,127,95,.38);
         }
 
         .ezy-lp-sticky-btn {
@@ -1712,10 +1727,10 @@
                 <div class="ezy-lp-hero-copy">
                     <span class="ezy-lp-badge">⭐ 5.0 Google Rated Local Driving School</span>
                     <h1>Master Driving in Hampton Park &amp; Lynbrook with <span>Ezy Keys!</span></h1>
-                    <p>Build real road confidence and pass your VicRoads drive test on your first attempt with structured, calm, and professional driving instruction.</p>
+                    <p>Build real road confidence and pass your VicRoads drive test on your first attempt with structured, calm, and professional driving instruction. Serving Hampton Park, Lynbrook &amp; Lyndhurst.</p>
                     <ul class="ezy-lp-hero-list">
                         <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>Free door-to-door pick-up &amp; drop-off</strong> in Hampton Park, Lynbrook &amp; Lyndhurst</span></li>
-                        <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>Fun, calm &amp; zero-stress</strong> coaching tailored to your learning speed</span></li>
+                        <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>Fun, calm &amp; No Stress</strong> coaching tailored to your learning speed</span></li>
                         <li><span class="ezy-lp-list-icon" aria-hidden="true">✅</span><span class="ezy-lp-list-copy"><strong>VicRoads test focused</strong> learn exact test routes and marking criteria</span></li>
                     </ul>
                     <div class="ezy-lp-hero-actions">
@@ -1725,7 +1740,7 @@
                 </div>
                 <div class="ezy-lp-car-stage">
                     <div class="ezy-lp-visual-chip ezy-lp-chip-safety"><i class="fas fa-shield-alt"></i><span>5-Star ANCAP<br><strong>Safety Vehicle</strong></span></div>
-                    <div class="ezy-lp-visual-chip ezy-lp-chip-control"><i class="fas fa-car-side"></i><span>Professional<br><strong>Dual Controls</strong></span></div>
+                    <div class="ezy-lp-visual-chip ezy-lp-chip-control"><i class="fas fa-car-side"></i><span>Equipped with<br><strong>Dual Controls</strong></span></div>
                     <div class="ezy-lp-car-card">
                         <img class="ezy-lp-car-image" src="../images/cars/car.jpeg" alt="2025 Toyota Yaris Cross used by Ezy Keys Driving School">
                         <div class="ezy-lp-car-details">
@@ -1826,7 +1841,7 @@
                             </div>
                             <div class="ezy-lp-field">
                                 <label for="suburb">Select Location *</label>
-                                <select id="suburb" name="suburb" required>
+                                <select id="suburb" name="suburb" required onchange="toggleOtherLocation(this.value)">
                                     <option value="">-- Select Location --</option>
                                     <option value="Hampton Park">Hampton Park</option>
                                     <option value="Lynbrook">Lynbrook</option>
@@ -1834,8 +1849,12 @@
                                     <option value="Other">Other Surrounding Suburb</option>
                                 </select>
                             </div>
+                            <div class="ezy-lp-field ezy-lp-other-location" id="otherLocationField" hidden>
+                                <label for="otherLocation">Enter Your Location *</label>
+                                <input type="text" id="otherLocation" name="other_location" maxlength="100" placeholder="Type your suburb or location">
+                            </div>
                             <div class="ezy-lp-field">
-                                <label for="inquiry">Inquiry Option *</label>
+                                <label for="inquiry">Your Enquiry *</label>
                                 <textarea id="inquiry" name="inquiry" required maxlength="500" rows="4" placeholder="e.g. 90-Min Lesson, 60-Min Lesson, Special Offer"></textarea>
                             </div>
                             <div class="ezy-lp-honeypot" aria-hidden="true">
@@ -1868,9 +1887,6 @@
                     <div class="feat-card1"><span class="feat-emoji">🔄</span><p>Easy reversing techniques</p></div>
                     <div class="feat-card1"><span class="feat-emoji">🧭</span><p>Patient and Calm Instructor</p></div>
                     <div class="feat-card1"><span class="feat-emoji">🎯</span><p>Drive Test focused to pass the test with Ease</p></div>
-                </div>
-                <div class="about-btn-container">
-                    <a href="about.html" class="btn btn-about">Learn More About Us</a>
                 </div>
             </div>
         </section>
@@ -1935,7 +1951,7 @@
                     </div>
                     <div class="ezy-lp-faq-item">
                         <button type="button" class="ezy-lp-faq-question" onclick="toggleFaq(this)" aria-expanded="false">Is the training car automatic or manual? <span>+</span></button>
-                        <div class="ezy-lp-faq-answer"><p>Lessons are conducted in a brand-new, automatic 2025 Toyota Yaris Cross equipped with dual controls for maximum safety.</p></div>
+                        <div class="ezy-lp-faq-answer"><p>Lessons are conducted in an 2025 Toyota Yaris Cross equipped with dual controls for maximum safety.</p></div>
                     </div>
                     <div class="ezy-lp-faq-item">
                         <button type="button" class="ezy-lp-faq-question" onclick="toggleFaq(this)" aria-expanded="false">How does the Buy 3 Get 1 Free deal work? <span>+</span></button>
@@ -1972,6 +1988,15 @@
     </div>
 
     <script>
+        function toggleOtherLocation(value) {
+            const field = document.getElementById('otherLocationField');
+            const input = document.getElementById('otherLocation');
+            const showField = value === 'Other';
+            field.hidden = !showField;
+            input.required = showField;
+            if (!showField) input.value = '';
+        }
+
         function toggleFaq(button) {
             const answer = button.nextElementSibling;
             const isOpen = answer.classList.contains('open');
@@ -2012,6 +2037,7 @@
                 }
 
                 form.reset();
+                toggleOtherLocation('');
                 status.className = 'ezy-lp-form-status is-success';
                 status.textContent = result.message;
             } catch (error) {

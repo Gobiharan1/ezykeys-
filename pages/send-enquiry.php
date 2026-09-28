@@ -36,6 +36,7 @@ function clean_field(string $value, int $maximumLength): string
 $name = clean_field((string) ($_POST['name'] ?? ''), 100);
 $phone = clean_field((string) ($_POST['phone'] ?? ''), 30);
 $suburb = clean_field((string) ($_POST['suburb'] ?? ''), 80);
+$otherLocation = clean_field((string) ($_POST['other_location'] ?? ''), 100);
 $inquiry = clean_field((string) ($_POST['inquiry'] ?? ''), 500);
 
 if ($name === '' || $phone === '' || $suburb === '' || $inquiry === '') {
@@ -51,8 +52,14 @@ if (!in_array($suburb, $allowedSuburbs, true)) {
     finish(422, false, 'Please select a valid location.');
 }
 
+if ($suburb === 'Other' && $otherLocation === '') {
+    finish(422, false, 'Please enter your suburb or location.');
+}
+
+$displayLocation = $suburb === 'Other' ? $otherLocation : $suburb;
+
 $recipient = 'sanjeev@ezykeys.com.au';
-$subject = 'Ezy Keys Website Enquiry - ' . $suburb;
+$subject = 'Ezy Keys Website Enquiry - ' . $displayLocation;
 $receivedAt = date('j M Y, g:i a T');
 $visitorIp = clean_field((string) ($_SERVER['REMOTE_ADDR'] ?? 'Unavailable'), 45);
 
@@ -61,8 +68,8 @@ $message = implode("\r\n", [
     '',
     'Name: ' . $name,
     'Call / WhatsApp Number: ' . $phone,
-    'Location: ' . $suburb,
-    'Inquiry Option: ' . $inquiry,
+    'Location: ' . $displayLocation,
+    'Your Enquiry: ' . $inquiry,
     '',
     'Received: ' . $receivedAt,
     'Visitor IP: ' . $visitorIp,
