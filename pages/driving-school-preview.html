@@ -1839,6 +1839,12 @@
     .ezy-hp-package:not(.ezy-hp-package-featured) .ezy-hp-package-title { min-height: 2.6em; font-size: 1.05rem; }
     .ezy-hp-package:not(.ezy-hp-package-featured) .ezy-hp-package-price { font-size: 2.5rem; }
 }
+
+@media(min-width:781px) {
+    .ezy-hp-packages-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .ezy-hp-package.ezy-hp-package-featured { grid-column: auto; }
+}
+
 </style>
 </head>
 <body>
