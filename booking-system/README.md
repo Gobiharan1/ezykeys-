@@ -2,6 +2,13 @@
 
 A real PHP + PDO booking application. This does not modify or inject buttons into the existing website or live chat.
 
+## Hosted customer review
+
+- Booking page: https://ezykeys.com.au/booking-test/
+- Admin: https://ezykeys.com.au/booking-test/admin.php
+
+This is an isolated review environment. Its persistent database and admin credentials are stored privately outside public_html. No booking links were added to the main website. Email notifications and payment processing are not configured for this review build.
+
 ## Review locally
 
 The local preview uses SQLite outside this upload folder. It includes clearly labelled demo records. No emails, SMS, push notifications, or payment transactions are sent.
@@ -50,7 +57,7 @@ The installer creates only tables prefixed `booking_`. It seeds packages only if
 5. Open `/booking-test/index.php` and `/booking-test/admin.php`. Test requests, scheduling, prices, restricted offers, and login/logout. Verify `/booking-test/config/`, `/includes/`, `/bin/`, and `/tests/` return 403 on Apache. The included `.htaccess` rules require Apache-compatible hosting; add equivalent deny rules before deploying on Nginx.
 6. Confirm the package terms, notification requirements, test-day car-hire scheduling, and admin workflow before using this with real customers. Only after review should a Book a Lesson button be added elsewhere.
 
-The upload ZIP excludes the local database, local configuration, and preview admin credentials. No deployment to the live site has been performed.
+The upload ZIP excludes the local database, local configuration, and preview admin credentials. The isolated hosted review is deployed at the URLs above; the main website and chat application are unchanged.
 
 ## Checks
 
