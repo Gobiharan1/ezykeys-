@@ -1845,6 +1845,16 @@
     .ezy-hp-package.ezy-hp-package-featured { grid-column: auto; }
 }
 
+
+/* Equal-height lesson cards with concise supporting descriptions. */
+.ezy-hp-packages-grid { align-items: stretch; }
+.ezy-hp-package:not(.ezy-hp-package-featured) .ezy-hp-package-desc { margin: 0; }
+@media(min-width:781px) {
+    .ezy-hp-package.ezy-hp-package-featured { align-items: stretch; gap: 16px; }
+    .ezy-hp-package-featured .ezy-hp-package-title { min-height: 2.4em; }
+    .ezy-hp-package .ezy-hp-package-desc { min-height: 3em; }
+}
+
 </style>
 </head>
 <body>
@@ -1898,11 +1908,15 @@
                 <div class="ezy-hp-packages-grid">
                     <article class="ezy-hp-package">
                         <h3 class="ezy-hp-package-title">45-Minute Lesson</h3>
+                        <p class="ezy-hp-package-desc">A focused introduction to build confidence behind the wheel.</p>
                         <div class="ezy-hp-package-price">$45</div>
+                        <p class="ezy-hp-package-note">For Hampton Park residents only.</p>
                     </article>
                     <article class="ezy-hp-package">
                         <h3 class="ezy-hp-package-title">60-Minute Standard</h3>
+                        <p class="ezy-hp-package-desc">Build safe driving habits with structured, practical coaching.</p>
                         <div class="ezy-hp-package-price">$75</div>
+                        <p class="ezy-hp-package-note">Ideal for regular practice and steady progress.</p>
                     </article>
                     <article class="ezy-hp-package ezy-hp-package-featured">
                         <span class="ezy-hp-package-badge">SPECIAL OFFER</span>
