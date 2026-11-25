@@ -1830,34 +1830,14 @@
 @media(max-width:560px) { .ezy-hp-features-grid { grid-template-columns: minmax(0,1fr); } }
 
 
-/* Weekly lesson comparison, with the best-value option spanning mobile. */
-.ezy-weekly-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-.ezy-weekly-card { position: relative; min-width: 0; padding: 30px 24px; border: 2px solid #d5e7e1; border-radius: 22px; background: #fff; }
-.ezy-weekly-card h3 { margin: 0 0 12px; color: #15313f; font-size: 1.2rem; font-weight: 800; line-height: 1.3; }
-.ezy-weekly-frequency { margin: 0; color: #475e66; font-size: 1.08rem; line-height: 1.5; }
-.ezy-weekly-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 6px; margin: 22px 0 8px; color: #15313f; }
-.ezy-weekly-price strong { color: #006653; font-size: clamp(2.7rem,4.5vw,3.6rem); line-height: 1; letter-spacing: -.055em; }
-.ezy-weekly-price span { font-size: 1rem; }
-.ezy-weekly-saving { margin: 12px 0 0; color: #006653; font-size: 1.08rem; font-weight: 800; }
-.ezy-weekly-best { background: #e1f5ed; border-color: #007f68; }
-.ezy-weekly-badge { position: absolute; top: -16px; right: 20px; padding: 6px 14px; background: #ffdf7e; color: #30260a; border-radius: 999px; font-size: .95rem; font-weight: 800; }
-@media(max-width:620px) {
-    .ezy-weekly-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 12px; }
-    .ezy-weekly-card { padding: 22px 14px; border-radius: 18px; }
-    .ezy-weekly-card h3 { min-height: 2.6em; font-size: 1rem; margin-bottom: 8px; }
-    .ezy-weekly-frequency { font-size: .88rem; }
-    .ezy-weekly-price { margin-top: 18px; gap: 4px; }
-    .ezy-weekly-price strong { font-size: 2.2rem; }
-    .ezy-weekly-price span { font-size: .75rem; }
-    .ezy-weekly-saving { font-size: .9rem; }
-    .ezy-weekly-best { grid-column: 1 / -1; }
-    .ezy-weekly-best h3 { min-height: 0; }
-}
 
-@media(max-width:360px) {
-    .ezy-weekly-card { padding-inline: 12px; }
-    .ezy-weekly-price strong { font-size: 1.9rem; }
-    .ezy-weekly-price span { font-size: .65rem; }
+/* Two standard lesson cards above the full-width ninety-minute offer. */
+.ezy-hp-packages-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media(max-width:620px) {
+    .ezy-hp-packages-grid { gap: 26px 12px; }
+    .ezy-hp-package:not(.ezy-hp-package-featured) { padding: 22px 14px; gap: 14px; }
+    .ezy-hp-package:not(.ezy-hp-package-featured) .ezy-hp-package-title { min-height: 2.6em; font-size: 1.05rem; }
+    .ezy-hp-package:not(.ezy-hp-package-featured) .ezy-hp-package-price { font-size: 2.5rem; }
 }
 </style>
 </head>
@@ -1909,27 +1889,25 @@
                     <h2>Driving Lesson Prices &amp; Special Offers</h2>
                     <p>Clear, honest pricing with zero hidden fees. Free doorstep pick-up and drop-off included in all 5 service suburbs.</p>
                 </div>
-                <div class="ezy-weekly-grid">
-                    <article class="ezy-weekly-card">
-                        <h3>Standard 1-Hour Lesson</h3>
-                        <p class="ezy-weekly-frequency">1 lesson per week</p>
-                        <p class="ezy-weekly-price"><strong>$75</strong> <span>per lesson</span></p>
+                <div class="ezy-hp-packages-grid">
+                    <article class="ezy-hp-package">
+                        <h3 class="ezy-hp-package-title">45-Minute Lesson</h3>
+                        <div class="ezy-hp-package-price">$45</div>
                     </article>
-                    <article class="ezy-weekly-card">
-                        <h3>Double Up</h3>
-                        <p class="ezy-weekly-frequency">2 lessons per week</p>
-                        <p class="ezy-weekly-price"><strong>$70</strong> <span>per lesson</span></p>
-                        <p class="ezy-weekly-saving">Save $10 total</p>
+                    <article class="ezy-hp-package">
+                        <h3 class="ezy-hp-package-title">60-Minute Standard</h3>
+                        <div class="ezy-hp-package-price">$75</div>
                     </article>
-                    <article class="ezy-weekly-card ezy-weekly-best">
-                        <span class="ezy-weekly-badge">Best Value</span>
-                        <h3>Triple Drive</h3>
-                        <p class="ezy-weekly-frequency">3 lessons per week</p>
-                        <p class="ezy-weekly-price"><strong>$65</strong> <span>per lesson</span></p>
-                        <p class="ezy-weekly-saving">Save $30 total</p>
+                    <article class="ezy-hp-package ezy-hp-package-featured">
+                        <span class="ezy-hp-package-badge">SPECIAL OFFER</span>
+                        <h3 class="ezy-hp-package-title">Single 90-Minute Lesson</h3>
+                        <p class="ezy-hp-package-desc">Extended active driving time for faster progress</p>
+                        <div class="ezy-hp-package-price"><del class="ezy-normal-price">$120</del> $90</div>
+                        <div class="ezy-savings">Save $30</div>
+                        <p class="ezy-hp-package-note">Master complex intersections, busy arterial roads, and tricky parking maneuvers without feeling rushed.</p>
                     </article>
                 </div>
-                <p class="ezy-hp-pricing-terms">Weekly discounts apply when the lessons are scheduled and completed within the same calendar week.</p>
+                <p class="ezy-hp-pricing-terms">The $45 lesson offer is available to Hampton Park residents only.</p>
             </div>
         </section>
 
